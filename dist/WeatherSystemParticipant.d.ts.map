@@ -1,0 +1,1 @@
+{"version":3,"file":"WeatherSystemParticipant.d.ts","sourceRoot":"","sources":["../src/WeatherSystemParticipant.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,8BAAsB,wBAAwB;IAC5C,OAAO,CAAC,EAAE,CAAS;IACnB,OAAO,CAAC,IAAI,CAAS;IAErB;;;;OAIG;gBACS,EAAE,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM;IAKpC;;;OAGG;IACI,OAAO,IAAI,MAAM;IAIxB;;;OAGG;IACI,KAAK,IAAI,MAAM;CAGvB"}

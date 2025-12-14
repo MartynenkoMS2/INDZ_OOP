@@ -1,0 +1,82 @@
+@startuml
+title UML-діаграма класів: Метеосервіс
+
+abstract class WeatherSystemParticipant {
+  - id : number
+  - name : string
+  + WeatherSystemParticipant(id:number, name:string)
+  + getName() : string
+  + getId() : number
+}
+
+interface INotificationPlan {
+  + formNotification() : string
+}
+
+class Meteorologist {
+  - specialization : string
+  + Meteorologist(id:number, name:string, specialization:string)
+  + publishForecast() : void
+  + publishWarning() : void
+  + analyzeAccuracy() : void
+}
+
+class Technician {
+  - level : string
+  + Technician(id:number, name:string, level:string)
+  + maintainSensors() : void
+  + maintainRadar() : void
+}
+
+class Warning {
+  - text : string
+  - time : Date
+  - threshold : EventThreshold
+  + Warning(text:string, time:Date, threshold:EventThreshold)
+  + getDetails() : string
+  + getTime() : Date
+  + getThreshold() : EventThreshold
+}
+
+class EventThreshold {
+  - dangerLevel : number
+  + EventThreshold(level:number)
+  + getLevel() : number
+}
+
+class Region {
+  - name : string
+  - warnings : Warning[]
+  + Region(name:string)
+  + addWarning(warning:Warning) : void
+  + getName() : string
+  + getWarnings() : Warning[]
+}
+
+class Subscriber {
+  - name : string
+  + Subscriber(name:string)
+  + deliverMessage(text:string) : void
+  + getName() : string
+}
+
+class NotificationService {
+  - recipients : string[]
+  - subscribers : Subscriber[]
+  + NotificationService()
+  + addRecipient(recipient:string) : void
+  + addSubscriber(subscriber:Subscriber) : void
+  + send(text:string) : boolean
+}
+
+WeatherSystemParticipant <|-- Meteorologist
+WeatherSystemParticipant <|-- Technician
+
+Meteorologist ..|> INotificationPlan
+Technician ..|> INotificationPlan
+
+Warning *-- EventThreshold
+Region o-- Warning
+Warning ..> NotificationService
+NotificationService --> Subscriber
+@enduml

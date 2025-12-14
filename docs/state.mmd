@@ -1,0 +1,11 @@
+stateDiagram-v2
+    [*] --> Created : createWarning()
+
+    Created --> Active : confirmByMetorologist()
+    Active --> Sent : send(NotificationService)
+    Active --> Canceled : cancel()
+
+    Sent --> Archived : eventEnded()
+    Canceled --> Archived : saveForHistory()
+
+    Archived --> [*]

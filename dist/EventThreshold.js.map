@@ -1,0 +1,1 @@
+{"version":3,"file":"EventThreshold.js","sourceRoot":"","sources":["../src/EventThreshold.ts"],"names":[],"mappings":";;;AAAA;;GAEG;AACH,MAAa,cAAc;IAGzB;;;OAGG;IACH,YAAY,KAAa;QACvB,IAAI,CAAC,WAAW,GAAG,KAAK,CAAC;IAC3B,CAAC;IAED;;;OAGG;IACI,QAAQ;QACb,OAAO,IAAI,CAAC,WAAW,CAAC;IAC1B,CAAC;CACF;AAlBD,wCAkBC"}
